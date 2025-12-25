@@ -1,19 +1,104 @@
-<?php
-$pageTitle = 'فئة المنتجات | ZED_GH';
-include 'includes/header.php';
-include 'includes/sidebar.php';
-include 'includes/contact-modal.php';
-?>
+<!-- category.html -->
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZED_GH | الفئات</title>
 
+    <!-- الهوية البصرية -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- أيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- =========================
+     الشريط العلوي (Header)
+========================= -->
+<header id="main-header">
+    <div class="logo-area">
+        <button id="menu-btn" onclick="toggleSidebar()">☰</button>
+        <img src="assets/logo.svg" alt="ZED_GH Logo" class="logo-img">
+    </div>
+
+    <div class="nav-controls">
+        <nav class="header-nav">
+            <a href="index.html" data-i18n="home">الرئيسية</a>
+            <a href="about.html" data-i18n="about_us">من نحن</a>
+            <a href="contact.html" data-i18n="contact_us">اتصل بنا</a>
+        </nav>
+
+        <div class="divider"></div>
+
+        <!-- زر تحميل التطبيق -->
+        <button class="app-btn">
+            <i class="fas fa-download"></i>
+            <span data-i18n="download_app">حمل التطبيق</span>
+        </button>
+
+        <div class="divider"></div>
+
+        <!-- تغيير اللغة -->
+        <button onclick="changeLanguage('ar')" class="lang-btn">AR</button>
+        <button onclick="changeLanguage('fr')" class="lang-btn">FR</button>
+        <button onclick="changeLanguage('en')" class="lang-btn">EN</button>
+    </div>
+</header>
+
+<!-- =========================
+     الشريط الجانبي (Sidebar)
+========================= -->
+<div id="sidebar-overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+<aside id="sidebar" class="sidebar">
+    <h3 data-i18n="categories">الفئات</h3>
+    <ul class="category-list"></ul>
+</aside>
+
+<!-- =========================
+     محتوى الصفحة
+========================= -->
 <div class="main-container">
     <main class="content">
-        <div class="welcome-banner">
-            <h1 id="category-title">منتجات القسم</h1>
-            <p>تصفح أحدث المنتجات في هذا القسم</p>
-        </div>
 
-        <div id="posts-container" class="products-grid"></div>
+        <!-- عنوان الفئة (يتغير ديناميكيًا) -->
+        <section class="welcome-banner">
+            <h1 id="category-title">...</h1>
+            <p data-i18n="loading">جاري تحميل المنتجات...</p>
+        </section>
+
+        <!-- المنتجات -->
+        <section id="posts-container" class="products-grid"></section>
+
     </main>
 </div>
 
-<?php include 'includes/footer.php'; ?>
+<!-- =========================
+     الفوتر
+========================= -->
+<footer>
+    <div class="footer-content">
+        <h2>ZED_GH</h2>
+        <p data-i18n="footer_slogan">نحو القمة بثقة | Professional Marketing</p>
+
+        <div class="footer-links">
+            <a href="index.html" data-i18n="home">الرئيسية</a> |
+            <a href="about.html" data-i18n="about_us">من نحن</a> |
+            <a href="contact.html" data-i18n="contact_us">اتصل بنا</a>
+        </div>
+
+        <p data-i18n="rights">&copy; 2023 ZED_GH</p>
+    </div>
+</footer>
+
+<!-- =========================
+     JavaScript
+========================= -->
+<script src="js/main.js"></script>
+<script src="js/home-loader.js"></script>
+
+</body>
+</html>
