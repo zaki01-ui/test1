@@ -4,10 +4,6 @@
    Depends on:
    - css/core/theme.css
    - css/core/components.css
-
-   Purpose:
-   - تصميم الشريط العلوي فقط
-   - أي تعديل يخص الهيدر يتم هنا
 ========================================================= */
 
 
@@ -31,7 +27,16 @@
     justify-content: space-between;
 
     z-index: 1000;
-    transition: var(--transition-normal);
+
+    /* حركة الإخفاء/الإظهار */
+    transform: translateY(0);
+    transition: transform var(--transition-normal), box-shadow var(--transition-fast);
+}
+
+/* عند الإخفاء أثناء التمرير للأسفل */
+#main-header.header-hidden {
+    transform: translateY(-100%);
+    box-shadow: none;
 }
 
 
@@ -44,18 +49,18 @@
     gap: var(--space-sm);
 }
 
-/* زر القائمة الجانبية */
+/* زر القائمة */
 #menu-btn {
-    all: unset;
-}
-
-#menu-btn {
+    background: rgba(0,0,0,0.05);
+    border: none;
+    border-radius: var(--radius-round);
+    padding: 8px;
     cursor: pointer;
+    transition: var(--transition-fast);
 }
 
-/* تطبيق مكون الزر */
-#menu-btn {
-    composes: btn-menu;
+#menu-btn:hover {
+    background: rgba(0,0,0,0.15);
 }
 
 /* الشعار */
@@ -67,7 +72,7 @@
 
 
 /* =========================================================
-   3. NAV CONTROLS – عناصر التحكم العلوية
+   3. NAV CONTROLS – عناصر التحكم
 ========================================================= */
 .nav-controls {
     display: flex;
@@ -94,7 +99,6 @@
 
     padding: 6px 12px;
     border-radius: var(--radius-sm);
-
     transition: var(--transition-fast);
 }
 
@@ -115,12 +119,30 @@
 
 
 /* =========================================================
-   6. APP DOWNLOAD BUTTON – زر تحميل التطبيق
+   6. APP DOWNLOAD BUTTON – زر تحميل التطبيق (مُعزَّز)
 ========================================================= */
 .app-btn {
-    /* ربط مباشر بمكون الأزرار */
-    composes: btn-app;
-    font-size: var(--fs-label);
+    /* نستخدم نفس زر btn-app دون إعادة تعريف */
+    position: relative;
+
+    /* إبراز بصري */
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+
+    /* أنيميشن الهوية */
+    animation: pulse-glow 3s infinite;
+}
+
+/* تأثير توهج ناعم */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 12px rgba(212, 175, 55, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+    }
 }
 
 
@@ -143,7 +165,18 @@
    8. LANGUAGE BUTTONS – تغيير اللغة
 ========================================================= */
 .lang-btn {
-    composes: btn-lang;
+    border: 1px solid #ddd;
+    background: transparent;
+    border-radius: var(--radius-sm);
+    padding: 4px 10px;
+    font-size: var(--fs-label);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.lang-btn:hover {
+    background: var(--color-dark-bg);
+    color: #fff;
 }
 
 
@@ -152,13 +185,11 @@
 ========================================================= */
 @media (max-width: 768px) {
 
-    /* إخفاء الروابط والشبكات لتخفيف الهيدر */
     .header-nav,
     .header-social {
         display: none;
     }
 
-    /* زر التطبيق يصبح أيقونة فقط */
     .app-btn span {
         display: none;
     }
@@ -170,4 +201,3 @@
         border-radius: var(--radius-round);
     }
 }
-
