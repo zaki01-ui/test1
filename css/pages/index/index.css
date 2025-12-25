@@ -1,5 +1,7 @@
 @import url('../../core/theme.css');
 @import url('../../core/components.css');
 @import url('./header.css');
+@import url('./sidebar.css');
 @import url('./hero.css');
 @import url('./products.css');
+
