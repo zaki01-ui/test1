@@ -49,7 +49,7 @@
         <div class="divider"></div>
 
         <!-- زر تحميل التطبيق -->
-        <button class="app-btn">
+        <button class="app-btn" onclick="openDownloadModal()">
             <i class="fas fa-download"></i>
             <span data-i18n="download_app">حمل التطبيق</span>
         </button>
@@ -126,6 +126,94 @@
     </div>
 </div>
 
+<!-- =====================================================
+     ========== [ DOWNLOAD MODAL | نافذة تحميل التطبيق ] ==
+     بطاقة واحدة – بدون إعادة توجيه – قابلة للتطوير
+====================================================== -->
+<div id="download-modal" class="modal-overlay">
+
+    <div class="modal-content download-card">
+
+        <!-- زر الإغلاق -->
+        <button class="close-modal" onclick="closeDownloadModal()">&times;</button>
+
+        <!-- عنوان النافذة -->
+        <h3 data-i18n="download_title">تحميل التطبيق</h3>
+        <p data-i18n="download_desc">
+            اختر نظام التشغيل وطريقة التحميل المناسبة لك
+        </p>
+
+        <!-- =======================
+             ANDROID SECTION
+        ======================== -->
+        <div class="download-section android-section">
+
+            <h4 data-i18n="android_title">أندرويد</h4>
+
+            <!-- مساحة QR Code -->
+            <div class="qr-box" id="android-qr">
+                <!-- QR Code يولد عبر JavaScript -->
+            </div>
+
+            <!-- خيارات التحميل -->
+            <div class="download-options">
+
+                <button onclick="setAndroidDownload('local')"
+                        data-i18n="android_local">
+                    تنزيل محلي
+                </button>
+
+                <button onclick="setAndroidDownload('google_play')"
+                        data-i18n="android_google">
+                    Google Play
+                </button>
+
+                <button onclick="setAndroidDownload('amazon')"
+                        data-i18n="android_amazon">
+                    Amazon Appstore
+                </button>
+
+                <button onclick="setAndroidDownload('fdroid')"
+                        data-i18n="android_fdroid">
+                    F-Droid
+                </button>
+
+            </div>
+        </div>
+
+        <!-- =======================
+             IPHONE SECTION
+        ======================== -->
+        <div class="download-section ios-section">
+
+            <h4 data-i18n="ios_title">آيفون</h4>
+
+            <!-- مساحة QR Code -->
+            <div class="qr-box" id="ios-qr">
+                <!-- QR Code يولد عبر JavaScript -->
+            </div>
+
+            <!-- خيارات التحميل -->
+            <div class="download-options">
+
+                <button onclick="setIOSDownload('local')"
+                        data-i18n="ios_local">
+                    تنزيل محلي
+                </button>
+
+                <button onclick="setIOSDownload('app_store')"
+                        data-i18n="ios_appstore">
+                    App Store
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    
 <!-- =====================================================
      =============== [ MAIN CONTENT | المحتوى ] ===========
      أي شيء يتغير حسب الصفحة يكون هنا
