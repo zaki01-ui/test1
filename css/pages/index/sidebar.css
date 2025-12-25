@@ -1,0 +1,128 @@
+/* =========================================================
+   SIDEBAR DESIGN
+   File: css/pages/index/sidebar.css
+   Depends on:
+   - css/core/theme.css
+   - css/core/components.css
+
+   Purpose:
+   - تصميم القائمة الجانبية فقط
+   - بدون أي منطق JavaScript
+========================================================= */
+
+
+/* =========================================================
+   1. OVERLAY – طبقة التعتيم
+========================================================= */
+.overlay {
+    position: fixed;
+    inset: 0;
+    top: 70px; /* أسفل الهيدر */
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-normal);
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================================
+   2. SIDEBAR WRAPPER – الغلاف العام
+========================================================= */
+.sidebar {
+    position: fixed;
+    top: 70px;
+    right: -300px;
+
+    width: 280px;
+    height: calc(100vh - 70px);
+
+    background: var(--color-white-pure);
+    box-shadow: var(--shadow-medium);
+
+    padding: var(--space-lg);
+    z-index: 999;
+
+    overflow-y: auto;
+    transition: var(--transition-normal);
+}
+
+/* عند الفتح */
+.sidebar.active {
+    right: 0;
+}
+
+
+/* =========================================================
+   3. RTL / LTR SUPPORT
+========================================================= */
+html[dir="ltr"] .sidebar {
+    right: auto;
+    left: -300px;
+}
+
+html[dir="ltr"] .sidebar.active {
+    left: 0;
+}
+
+
+/* =========================================================
+   4. SIDEBAR TITLE – العنوان
+========================================================= */
+.sidebar h3 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h3);
+    color: var(--color-dark-bg);
+
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-xs);
+
+    border-bottom: 2px solid var(--color-green-primary);
+}
+
+
+/* =========================================================
+   5. CATEGORY LIST – قائمة الفئات
+========================================================= */
+.category-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+/* عنصر الفئة */
+.category-list li {
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    font-weight: 500;
+
+    color: var(--color-text-main);
+    background: #f9f9f9;
+
+    transition: var(--transition-fast);
+}
+
+/* Hover */
+.category-list li:hover {
+    background: var(--color-green-primary);
+    color: #fff;
+}
+
+
+/* =========================================================
+   6. ACTIVE CATEGORY (للاستخدام لاحقًا)
+========================================================= */
+.category-list li.active {
+    background: var(--color-red-primary);
+    color: #fff;
+}
