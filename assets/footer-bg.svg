@@ -1,0 +1,114 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <!-- تدرجات الهوية البصرية -->
+    <linearGradient id="luxuryBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f2c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="gradGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#11998e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#38ef7d;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="gradRed" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#cb2d3e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ef473a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradWhite" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#f0f2f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- تدرج ذهبي للخطوط اللولبية -->
+    <linearGradient id="goldSwirl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#D4AF37;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#D4AF37;stop-opacity:0" />
+    </linearGradient>
+
+    <!-- فلتر التوهج القوي للشعار -->
+    <filter id="strongGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- فلتر توهج ناعم للنجوم -->
+    <filter id="starGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- 1. خلفية الفضاء العميقة -->
+  <rect width="100%" height="100%" fill="url(#luxuryBg)"/>
+
+  <!-- 2. النجوم والجزيئات الخلفية -->
+  <g fill="#ffffff" filter="url(#starGlow)">
+    <circle cx="100" cy="100" r="1.5" opacity="0.6"/>
+    <circle cx="300" cy="50" r="1" opacity="0.4"/>
+    <circle cx="900" cy="500" r="2" opacity="0.7"/>
+    <circle cx="1100" cy="100" r="1.5" opacity="0.5"/>
+    <circle cx="200" cy="550" r="1" opacity="0.3"/>
+    <circle cx="1050" cy="580" r="1.5" opacity="0.6"/>
+    <circle cx="50" cy="315" r="2" opacity="0.8"/>
+    <circle cx="1150" cy="315" r="1" opacity="0.4"/>
+    <circle cx="600" cy="50" r="1" opacity="0.3"/>
+    <circle cx="600" cy="580" r="1.5" opacity="0.5"/>
+    <!-- نجوم صغيرة جداً للتعمق -->
+    <circle cx="400" cy="200" r="0.8" opacity="0.3"/>
+    <circle cx="800" cy="400" r="0.8" opacity="0.3"/>
+  </g>
+
+  <!-- 3. خطوط لولبية ومدارات فضائية (عنصر جمالي) -->
+  <g transform="translate(600, 315)" fill="none" stroke-linecap="round">
+    <!-- حلقة خارجية ضخمة -->
+    <ellipse rx="500" ry="300" stroke="#ffffff" stroke-width="1" opacity="0.05" transform="rotate(15)"/>
+    <ellipse rx="480" ry="280" stroke="#ffffff" stroke-width="1" opacity="0.05" transform="rotate(-10)"/>
+    
+    <!-- دوامات لولبية ذهبية -->
+    <g stroke="url(#goldSwirl)" stroke-width="3" opacity="0.6">
+      <!-- دوامة يمين -->
+      <path d="M 50,-100 Q 150,-50 200,0 T 300,100" transform="rotate(-20)"/>
+      <path d="M 50,-100 Q 150,-50 200,0 T 300,100" transform="rotate(-20) translate(10,10)" stroke-width="1" opacity="0.5"/>
+      
+      <!-- دوامة يسار -->
+      <path d="M -50,100 Q -150,50 -200,0 T -300,-100" transform="rotate(20)"/>
+      <path d="M -50,100 Q -150,50 -200,0 T -300,-100" transform="rotate(20) translate(-10,-10)" stroke-width="1" opacity="0.5"/>
+    </g>
+
+    <!-- خطوط شعاعية خفيفة -->
+    <g stroke="#ffffff" stroke-width="1" opacity="0.1">
+      <line x1="-600" y1="-315" x2="-100" y2="-52"/>
+      <line x1="600" y1="-315" x2="100" y2="-52"/>
+      <line x1="0" y1="-500" x2="0" y2="-100"/>
+    </g>
+  </g>
+
+  <!-- 4. الشعار المركزي مع التوهج -->
+  <g transform="translate(600, 315)" filter="url(#strongGlow)">
+    
+    <!-- طبقة خلفية ضبابية للشعار لتكبير التوهج -->
+    <g opacity="0.5" transform="scale(1.1)">
+      <path d="M 0,-80 L -90,0 L 0,80 L -10,0 Z" fill="url(#gradGreen)" />
+      <path d="M 0,-80 L 90,0 L 0,80 L 10,0 Z" fill="url(#gradRed)" />
+      <path d="M 0,-80 L 10,0 L 0,80 L -10,0 Z" fill="url(#gradWhite)" />
+    </g>
+
+    <!-- الشعار الأصلي -->
+    <g>
+      <path d="M 0,-80 L -90,0 L 0,80 L -10,0 Z" fill="url(#gradGreen)" />
+      <path d="M 0,-80 L 90,0 L 0,80 L 10,0 Z" fill="url(#gradRed)" />
+      <path d="M 0,-80 L 10,0 L 0,80 L -10,0 Z" fill="url(#gradWhite)" />
+      <path d="M 0,-85 L -95,0 L 0,85 L 95,0 Z" fill="none" stroke="#D4AF37" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
