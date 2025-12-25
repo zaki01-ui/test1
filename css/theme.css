@@ -1,0 +1,180 @@
+/* =========================================================
+   BRAND VISUAL IDENTITY – THEME CORE
+   File: css/theme.css
+   Purpose:
+   - Central design tokens
+   - Visual identity foundation
+   - Imported by all other CSS layers
+========================================================= */
+
+
+/* =========================================================
+   1. COLORS – الهوية اللونية
+========================================================= */
+:root {
+
+    /* الألوان الأساسية */
+    --color-green-primary: #11998e;
+    --color-red-primary:   #cb2d3e;
+    --color-white-pure:    #ffffff;
+
+    /* اللون الذهبي المتوهج */
+    --color-gold-glow: #D4AF37;
+
+    /* لون برتقالي متوهج (FAB / Chat / CTA) */
+    --color-orange-glow: #ff8c42;
+
+    /* ألوان محايدة */
+    --color-dark-bg: #2C3E50;
+    --color-text-main: #333333;
+    --color-text-muted: #777777;
+
+    /* شفافية / ضبابية */
+    --overlay-fog-light: rgba(255, 255, 255, 0.6);
+    --overlay-fog-dark:  rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================================================
+   2. TYPOGRAPHY – الخطوط
+========================================================= */
+
+/*
+  اخترنا خطوط:
+  - حديثة
+  - واضحة
+  - متوافقة مع العربية واللاتينية
+*/
+
+:root {
+    /* الخط الأساسي */
+    --font-base: 'Segoe UI', 'Cairo', 'Tajawal', sans-serif;
+
+    /* العناوين */
+    --font-heading: 'Segoe UI', 'Cairo', sans-serif;
+
+    /* الوصف والنصوص */
+    --font-body: 'Segoe UI', 'Tajawal', sans-serif;
+
+    /* التعريفات / Labels */
+    --font-label: 'Segoe UI', sans-serif;
+
+    /* الشرح الصغير / Tooltips */
+    --font-helper: 'Segoe UI', sans-serif;
+}
+
+
+/* =========================================================
+   3. FONT SIZES – الأحجام
+========================================================= */
+:root {
+
+    /* عناوين */
+    --fs-h1: 2.2rem;
+    --fs-h2: 1.8rem;
+    --fs-h3: 1.4rem;
+
+    /* نصوص */
+    --fs-body: 1rem;
+    --fs-small: 0.875rem;
+
+    /* تعريفات / Labels */
+    --fs-label: 0.8rem;
+
+    /* شروحات صغيرة جدًا */
+    --fs-helper: 0.7rem;
+}
+
+
+/* =========================================================
+   4. SPACING SYSTEM – المسافات
+========================================================= */
+:root {
+
+    --space-xxs: 4px;
+    --space-xs:  8px;
+    --space-sm:  12px;
+    --space-md:  20px;
+    --space-lg:  30px;
+    --space-xl:  50px;
+}
+
+
+/* =========================================================
+   5. SHARED VALUES – قيم مشتركة
+========================================================= */
+:root {
+
+    /* الحواف */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-round: 50%;
+
+    /* الظلال */
+    --shadow-soft: 0 5px 15px rgba(0,0,0,0.08);
+    --shadow-medium: 0 10px 30px rgba(0,0,0,0.15);
+
+    /* الانتقالات */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.35s ease;
+    --transition-slow: 0.6s ease;
+}
+
+
+/* =========================================================
+   6. BACKGROUND ANIMATION – شعار متوهج خلف ضبابية
+========================================================= */
+
+/*
+  هذه الأنيميشن:
+  - خفيفة جدًا
+  - لا تعتمد على JS
+  - تعمل بالـ GPU
+*/
+
+@keyframes brand-glow-float {
+    0% {
+        transform: scale(1) translateY(0);
+        filter: blur(12px);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.05) translateY(-10px);
+        filter: blur(16px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        filter: blur(12px);
+        opacity: 0.6;
+    }
+}
+
+
+/* =========================================================
+   7. BRAND BACKGROUND HOLDER (للاستخدام لاحقًا)
+========================================================= */
+
+/*
+  هذه مجرد قاعدة
+  سيتم استعمالها لاحقًا داخل الحاويات
+*/
+
+.brand-animated-bg {
+    position: absolute;
+    inset: 0;
+    background: url('../assets/logo3.svg') center / 60% no-repeat;
+    animation: brand-glow-float 12s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* طبقة الضبابية فوق الأنيميشن */
+.brand-fog-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-fog-dark);
+    backdrop-filter: blur(6px);
+    z-index: 2;
+}
