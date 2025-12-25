@@ -1,1 +1,173 @@
+/* =========================================================
+   HEADER DESIGN
+   File: css/pages/index/header.css
+   Depends on:
+   - css/core/theme.css
+   - css/core/components.css
+
+   Purpose:
+   - تصميم الشريط العلوي فقط
+   - أي تعديل يخص الهيدر يتم هنا
+========================================================= */
+
+
+/* =========================================================
+   1. HEADER WRAPPER – الغلاف العام
+========================================================= */
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 70px;
+    padding: 0 var(--space-md);
+
+    background: var(--color-white-pure);
+    box-shadow: var(--shadow-soft);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+    transition: var(--transition-normal);
+}
+
+
+/* =========================================================
+   2. LOGO AREA – منطقة الشعار
+========================================================= */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+/* زر القائمة الجانبية */
+#menu-btn {
+    all: unset;
+}
+
+#menu-btn {
+    cursor: pointer;
+}
+
+/* تطبيق مكون الزر */
+#menu-btn {
+    composes: btn-menu;
+}
+
+/* الشعار */
+.logo-img {
+    width: 42px;
+    height: auto;
+    display: block;
+}
+
+
+/* =========================================================
+   3. NAV CONTROLS – عناصر التحكم العلوية
+========================================================= */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+
+/* =========================================================
+   4. MAIN NAVIGATION – روابط الصفحات
+========================================================= */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.header-nav a {
+    text-decoration: none;
+    font-family: var(--font-label);
+    font-size: var(--fs-label);
+    font-weight: bold;
+    color: var(--color-text-main);
+
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+
+    transition: var(--transition-fast);
+}
+
+.header-nav a:hover {
+    background: rgba(17, 153, 142, 0.1);
+    color: var(--color-green-primary);
+}
+
+
+/* =========================================================
+   5. DIVIDER – الفواصل
+========================================================= */
+.divider {
+    width: 1px;
+    height: 26px;
+    background: #ddd;
+}
+
+
+/* =========================================================
+   6. APP DOWNLOAD BUTTON – زر تحميل التطبيق
+========================================================= */
+.app-btn {
+    /* ربط مباشر بمكون الأزرار */
+    composes: btn-app;
+    font-size: var(--fs-label);
+}
+
+
+/* =========================================================
+   7. SOCIAL ICONS – أيقونات التواصل
+========================================================= */
+.header-social {
+    color: var(--color-dark-bg);
+    font-size: 16px;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.header-social:hover {
+    color: var(--color-green-primary);
+}
+
+
+/* =========================================================
+   8. LANGUAGE BUTTONS – تغيير اللغة
+========================================================= */
+.lang-btn {
+    composes: btn-lang;
+}
+
+
+/* =========================================================
+   9. RESPONSIVE – الموبايل
+========================================================= */
+@media (max-width: 768px) {
+
+    /* إخفاء الروابط والشبكات لتخفيف الهيدر */
+    .header-nav,
+    .header-social {
+        display: none;
+    }
+
+    /* زر التطبيق يصبح أيقونة فقط */
+    .app-btn span {
+        display: none;
+    }
+
+    .app-btn {
+        width: 38px;
+        height: 38px;
+        padding: 0;
+        border-radius: var(--radius-round);
+    }
+}
 
