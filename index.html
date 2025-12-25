@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ZED_GH | الصفحة الرئيسية</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===============================
+         [ CSS - التصميم العام ]
+         أي تعديل بصري يتم فقط هنا
+    ================================ -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- أيقونة الموقع -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- مكتبة الأيقونات -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- =====================================================
+     =============== [ HEADER | الشريط العلوي ] ===========
+     - الشعار
+     - القائمة العلوية
+     - تغيير اللغة
+     - روابط الصفحات الأساسية
+     أي تعديل يخص الهيدر يتم هنا فقط
+====================================================== -->
+<header id="main-header">
+
+    <!-- منطقة الشعار -->
+    <div class="logo-area">
+        <button id="menu-btn" onclick="toggleSidebar()">☰</button>
+        <img src="assets/logo.svg" alt="ZED_GH Logo" class="logo-img">
+    </div>
+
+    <!-- عناصر التحكم العلوية -->
+    <div class="nav-controls">
+
+        <!-- روابط الصفحات -->
+        <nav class="header-nav">
+            <a href="index.html" data-i18n="home">الرئيسية</a>
+            <a href="about.html" data-i18n="about_us">من نحن</a>
+            <a href="contact.html" data-i18n="contact_us">اتصل بنا</a>
+        </nav>
+
+        <div class="divider"></div>
+
+        <!-- زر تحميل التطبيق -->
+        <button class="app-btn">
+            <i class="fas fa-download"></i>
+            <span data-i18n="download_app">حمل التطبيق</span>
+        </button>
+
+        <div class="divider"></div>
+
+        <!-- شبكات التواصل -->
+        <a href="#" class="header-social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="header-social"><i class="fab fa-instagram"></i></a>
+
+        <!-- تغيير اللغة (منطقها في JavaScript فقط) -->
+        <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="changeLanguage('fr')">FR</button>
+        <button class="lang-btn" onclick="changeLanguage('ar')" style="font-weight:bold;">
+            عربي
+        </button>
+    </div>
+</header>
+
+<!-- =====================================================
+     =============== [ SIDEBAR | الشريط الجانبي ] =========
+     - الفئات
+     - يدار كليًا عبر JavaScript
+====================================================== -->
+
+<!-- طبقة التعتيم -->
+<div id="sidebar-overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+<aside id="sidebar" class="sidebar">
+    <h3 data-i18n="categories">الفئات</h3>
+
+    <!-- يتم ملؤها ديناميكيًا -->
+    <ul class="category-list"></ul>
+</aside>
+
+<!-- =====================================================
+     =============== [ CONTACT FAB | زر التواصل ] =========
+     زر عائم لفتح نافذة التواصل
+====================================================== -->
+<div id="contact-fab" onclick="openContactModal()">
+    <i class="fas fa-envelope"></i>
+</div>
+
+<!-- =====================================================
+     =============== [ CONTACT MODAL | نافذة التواصل ] ====
+     نافذة منبثقة
+====================================================== -->
+<div id="contact-modal" class="modal-overlay">
+    <div class="modal-content">
+
+        <button class="close-modal" onclick="closeContactModal()">&times;</button>
+
+        <h3 data-i18n="modal_title">طرق التواصل</h3>
+        <p data-i18n="modal_desc">اختر الطريقة المفضلة للتواصل معنا</p>
+
+        <div class="modal-links">
+            <a href="mailto:ziad.shop.gh@gmail.com" class="contact-link-box">
+                <i class="fas fa-envelope"></i>
+                ziad.shop.gh@gmail.com
+            </a>
+
+            <a href="#" class="contact-link-box" style="border-color:#25D366;">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+
+            <a href="#" class="contact-link-box" style="border-color:#1877F2;">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+
+            <a href="#" class="contact-link-box" style="border-color:#E4405F;">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- =====================================================
+     =============== [ MAIN CONTENT | المحتوى ] ===========
+     أي شيء يتغير حسب الصفحة يكون هنا
+====================================================== -->
+<div class="main-container">
+    <main class="content">
+
+        <!-- بانر ترحيبي -->
+        <div class="welcome-banner">
+            <img src="assets/logo.svg" alt="Logo" style="width:150px;">
+            <h1 data-i18n="welcome_title">مرحباً بكم في ZED_GH</h1>
+            <p data-i18n="welcome_desc">
+                نسوق للفخامة والاحترافية...
+            </p>
+        </div>
+
+        <!-- المنتجات (تُملأ عبر JavaScript) -->
+        <div id="posts-container" class="products-grid"></div>
+
+    </main>
+</div>
+
+<!-- =====================================================
+     =============== [ FOOTER | التذييل ] =================
+     ثابت في كل الصفحات
+====================================================== -->
+<footer>
+    <div class="footer-content">
+
+        <h2>ZED_GH</h2>
+
+        <p data-i18n="footer_slogan">
+            نحو القمة بثقة | Professional Marketing
+        </p>
+
+        <!-- أيقونات التواصل -->
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+        <!-- روابط الصفحات -->
+        <div class="footer-links">
+            <a href="index.html">الرئيسية</a> |
+            <a href="about.html">من نحن</a> |
+            <a href="contact.html">اتصل بنا</a>
+        </div>
+
+        <p>&copy; 2023 ZED_GH</p>
+    </div>
+</footer>
+
+<!-- =====================================================
+     =============== [ JavaScript ] =======================
+     - منطق فقط
+     - بدون HTML
+====================================================== -->
+<script src="js/main.js"></script>
+<script src="js/home-loader.js"></script>
+
+</body>
+</html>
