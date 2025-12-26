@@ -1,0 +1,109 @@
+/* ===============================
+   FOOTER
+================================ */
+footer {
+    position: relative;
+    background-image: url("../../assets/footer-bg.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 4rem 1.5rem 2rem;
+    margin-top: 5rem;
+    overflow: hidden;
+}
+
+/* طبقة تعتيم خفيفة لزيادة الجمالية */
+footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+}
+
+/* اسم المنصة */
+.footer-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+/* الشعار النصي */
+.footer-content p {
+    opacity: 0.85;
+    margin-bottom: 1.8rem;
+}
+
+/* ===============================
+   SOCIAL ICONS
+================================ */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* زر الأيقونة */
+.social-icons a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 1.2rem;
+
+    transition: all 0.3s ease;
+}
+
+/* التأثير الذهبي المتوهج */
+.social-icons a:hover {
+    color: #d4af37; /* ذهبي */
+    background: rgba(212, 175, 55, 0.15);
+    box-shadow:
+        0 0 8px rgba(212, 175, 55, 0.6),
+        0 0 16px rgba(212, 175, 55, 0.4);
+    transform: translateY(-4px);
+}
+
+/* ===============================
+   FOOTER LINKS
+================================ */
+.footer-links {
+    margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+    color: #fff;
+    opacity: 0.8;
+    margin: 0 0.4rem;
+    font-size: 0.95rem;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* حقوق النشر */
+footer p:last-child {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin-top: 1rem;
+}
