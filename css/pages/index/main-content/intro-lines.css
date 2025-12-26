@@ -2,20 +2,27 @@
    INTRO LINES
 ================================ */
 .intro-lines {
-    position: absolute;
-    inset: 0;
-    padding: 2.5rem;
+    position: relative;
+    inset: auto;
+   
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0;
+   
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
+   
     pointer-events: none; /* لا تتفاعل */
+
+    text-align: center;
 }
 
 /* جميع الأسطر */
 .intro-lines p {
     font-size: 0.95rem;
     opacity: 0.75;
-    max-width: 60%;
+    max-width: 100%;
 }
 
 /* السطر التاسع فقط */
