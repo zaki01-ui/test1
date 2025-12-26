@@ -11,11 +11,12 @@
    
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0;
    
     pointer-events: none; /* لا تتفاعل */
 
-    text-align: center;
+    text-align: start;
+    align-items: flex-start;
 }
 
 /* جميع الأسطر */
@@ -23,6 +24,8 @@
     font-size: 0.95rem;
     opacity: 0.75;
     max-width: 100%;
+
+    margin: 0;
 }
 
 
