@@ -1,0 +1,72 @@
+/* =========================================================
+   PAGE COMPONENT – CONTACT FAB
+   File: css/pages/index/fab.css
+
+   Depends on:
+   - css/core/theme.css
+   - css/core/components.css
+
+   Purpose:
+   - زر عائم لفتح نافذة التواصل
+   - يتموضع دائمًا عكس الشريط الجانبي
+   - يُستدعى فقط في الصفحات التي تحتاجه
+========================================================= */
+
+/* =========================================================
+   IMPORT CORE LAYERS
+========================================================= */
+@import url("../../core/theme.css");
+@import url("../../core/components.css");
+
+
+/* =========================================================
+   FLOATING ACTION BUTTON – CONTACT FAB
+========================================================= */
+#contact-fab {
+    position: fixed;
+    bottom: var(--space-md);
+
+    /* الوضع الافتراضي (RTL) */
+    left: var(--space-md);
+
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-round);
+
+    background: linear-gradient(
+        135deg,
+        var(--color-orange-glow),
+        var(--color-red-primary)
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+
+    box-shadow: 0 0 20px rgba(255, 140, 66, 0.6);
+    transition: var(--transition-normal);
+
+    z-index: 997;
+}
+
+
+/* =========================================================
+   HOVER EFFECT
+========================================================= */
+#contact-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 140, 66, 0.8);
+}
+
+
+/* =========================================================
+   LTR SUPPORT – يعكس الجهة تلقائيًا
+========================================================= */
+html[dir="ltr"] #contact-fab {
+    left: auto;
+    right: var(--space-md);
+}
