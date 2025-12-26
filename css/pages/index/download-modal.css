@@ -1,0 +1,72 @@
+/* ================================
+   DOWNLOAD MODAL – PAGE LAYER
+================================ */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--overlay-fog-dark);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+/* البطاقة */
+.download-card {
+    background: var(--color-white-pure);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    max-width: 700px;
+    width: 95%;
+    box-shadow: var(--shadow-medium);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    position: relative;
+}
+
+/* زر الإغلاق */
+.close-modal {
+    position: absolute;
+    top: var(--space-sm);
+    left: var(--space-sm);
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* الأقسام */
+.download-section {
+    flex: 1;
+    min-width: 260px;
+}
+
+/* QR */
+.qr-box {
+    display: none;
+    margin: var(--space-sm) auto;
+    justify-content: center;
+}
+
+.qr-box.active {
+    display: flex;
+}
+
+/* أزرار التحميل */
+.download-options button {
+    width: 100%;
+    margin-bottom: var(--space-xs);
+}
+
+/* زر التحميل النهائي */
+.download-final-btn {
+    width: 100%;
+    margin-top: var(--space-md);
+    justify-content: center;
+}
