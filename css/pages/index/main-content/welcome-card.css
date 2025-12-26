@@ -1,0 +1,49 @@
+/* ===============================
+   WELCOME CARD
+================================ */
+.welcome-card {
+    position: relative;
+    width: 100%;
+    min-height: 75vh;              /* تغطي معظم الواجهة */
+    border-radius: 28px;
+    overflow: hidden;
+
+    background-image: url("../../../../assets/footer-bg.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 4rem;
+}
+
+/* محتوى البطاقة */
+.welcome-card-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 3rem;
+}
+
+/* الشعار */
+.welcome-logo {
+    width: 160px;
+    margin-bottom: 1.5rem;
+}
+
+/* العنوان */
+.welcome-card h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+}
+
+/* الوصف */
+.welcome-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
