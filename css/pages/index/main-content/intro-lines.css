@@ -25,10 +25,4 @@
     max-width: 100%;
 }
 
-/* السطر التاسع فقط */
-.intro-lines p:nth-child(9) {
-    margin-top: auto;      /* يدفعه للأسفل */
-    align-self: center;    /* في الوسط أفقيًا */
-    text-align: center;
-    opacity: 0.9;
-}
+
