@@ -1,0 +1,162 @@
+/* =========================================================
+   PAGE COMPONENT – CONTACT MODAL
+   File: css/pages/index/contact-modal.css
+
+   Depends on:
+   - css/core/theme.css
+   - css/core/components.css
+
+   Purpose:
+   - نافذة منبثقة لطرق التواصل
+   - تُفتح عبر FAB
+========================================================= */
+
+@import url("../../core/theme.css");
+@import url("../../core/components.css");
+
+
+/* =========================================================
+   MODAL OVERLAY – طبقة التعتيم
+========================================================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--overlay-fog-dark);
+    backdrop-filter: blur(6px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-normal);
+
+    z-index: 998;
+}
+
+/* الحالة النشطة */
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   MODAL CONTENT – البطاقة
+========================================================= */
+.modal-content {
+    position: relative;
+    z-index: 1;
+
+    /* استعمال بطاقة جاهزة من الطبقة الثانية */
+    background: var(--color-white-pure);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+
+    width: 90%;
+    max-width: 420px;
+
+    box-shadow: var(--shadow-medium);
+    text-align: center;
+
+    transform: translateY(20px) scale(0.95);
+    transition: var(--transition-normal);
+}
+
+/* أنيميشن الدخول */
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+.close-modal {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+
+    color: var(--color-text-muted);
+    transition: var(--transition-fast);
+}
+
+.close-modal:hover {
+    color: var(--color-gold-glow);
+    text-shadow: 0 0 8px var(--color-gold-glow);
+}
+
+/* دعم LTR */
+html[dir="ltr"] .close-modal {
+    right: auto;
+    left: var(--space-sm);
+}
+
+
+/* =========================================================
+   MODAL TEXT
+========================================================= */
+.modal-content h3 {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h3);
+    margin-bottom: var(--space-xs);
+}
+
+.modal-content p {
+    font-size: var(--fs-body);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+}
+
+
+/* =========================================================
+   CONTACT LINKS
+========================================================= */
+.modal-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.contact-link-box {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+
+    background: #f9f9f9;
+    border-right: 3px solid var(--color-red-primary);
+
+    color: var(--color-text-main);
+    font-weight: bold;
+
+    transition: var(--transition-normal);
+}
+
+/* دعم LTR */
+html[dir="ltr"] .contact-link-box {
+    border-right: none;
+    border-left: 3px solid var(--color-red-primary);
+}
+
+.contact-link-box i {
+    font-size: 20px;
+}
+
+.contact-link-box:hover {
+    background: #eee;
+    transform: translateX(-4px);
+}
+
+html[dir="ltr"] .contact-link-box:hover {
+    transform: translateX(4px);
+}
