@@ -7,7 +7,7 @@
 @import url("../../core/animations.css");
 
 footer {
-    background: url("../../../../assets/footer-bg.svg") center / cover no-repeat;
+    background: url("../../../assets/footer-bg.svg") center / cover no-repeat;
     padding: var(--space-xl) var(--space-md);
     margin-top: var(--space-xl);
 
