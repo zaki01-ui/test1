@@ -27,7 +27,8 @@
     z-index: 2;
     text-align: center;
     max-width: 900px;
-    padding: 3rem;
+    padding: 2rem 3rem 6rem 3rem;
+    margin: 0 auto;
 }
 
 
@@ -35,6 +36,7 @@
 .welcome-card h1 {
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 1rem;
+    color: var(--color-white-pure);
 }
 
 /* الوصف */
@@ -42,4 +44,5 @@
     font-size: 1.1rem;
     line-height: 1.8;
     opacity: 0.9;
+    color: var(--color-green-primary);
 }
