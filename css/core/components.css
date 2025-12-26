@@ -253,3 +253,29 @@ html[dir="ltr"] .btn-contact {
 .fab-contact:hover {
     transform: scale(1.1);
 }
+
+/* =========================================================
+   SOCIAL ICON – Footer / Header / Anywhere
+========================================================= */
+
+.icon-social {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-round);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,0.08);
+    color: var(--color-white-pure);
+    font-size: 1.2rem;
+
+    transition: var(--transition-normal);
+}
+
+.icon-social:hover {
+    color: var(--color-gold-glow);
+    box-shadow: 0 0 12px var(--color-gold-glow);
+    transform: translateY(-4px);
+}
