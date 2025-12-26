@@ -229,25 +229,60 @@
     
 <!-- =====================================================
      =============== [ MAIN CONTENT | المحتوى ] ===========
-     أي شيء يتغير حسب الصفحة يكون هنا
 ====================================================== -->
 <div class="main-container">
     <main class="content">
 
-        <!-- بانر ترحيبي -->
-        <div class="welcome-banner">
-            <img src="assets/logo.svg" alt="Logo" style="width:150px;">
-            <h1 data-i18n="welcome_title">مرحباً بكم في ZED_GH</h1>
-            <p data-i18n="welcome_desc">
-                نسوق للفخامة والاحترافية...
-            </p>
-        </div>
+        <!-- ===============================
+             [ INTRO TEXT LINES | نصوص توضيحية ]
+             9 أسطر جاهزة للملء لاحقًا
+        ================================ -->
+        <section class="intro-lines">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </section>
 
-        <!-- المنتجات (تُملأ عبر JavaScript) -->
-        <div id="posts-container" class="products-grid"></div>
+        <!-- ===============================
+             [ WELCOME CARD | البطاقة الترحيبية ]
+             تتمدد وتتقلص حسب المحتوى
+        ================================ -->
+        <section class="welcome-card">
+
+            <div class="welcome-card-content">
+                <img src="assets/logo.svg" alt="ZED_GH Logo" class="welcome-logo">
+
+                <h1 data-i18n="welcome_title">
+                    مرحباً بكم في ZED_GH
+                </h1>
+
+                <p data-i18n="welcome_desc">
+                    نسوق للفخامة والاحترافية...
+                </p>
+            </div>
+
+        </section>
+
+        <!-- ===============================
+             [ DYNAMIC CONTENT AREA | المحتوى ]
+             يتمدد ويتقلص حسب ما يُبث بداخله
+        ================================ -->
+        <section class="dynamic-content">
+
+            <!-- المنتجات (تُملأ عبر JavaScript) -->
+            <div id="posts-container" class="products-grid"></div>
+
+        </section>
 
     </main>
 </div>
+
 
 <!-- =====================================================
      =============== [ FOOTER | التذييل ] =================
