@@ -1,109 +1,58 @@
-/* ===============================
-   FOOTER
-================================ */
+/* =====================================================
+   FOOTER – Page Layout Only
+   Global / Reusable
+===================================================== */
+
 footer {
-    position: relative;
-    background-image: url("../../assets/footer-bg.svg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url("../../../assets/footer-bg.svg") center / cover no-repeat;
+    padding: var(--space-xl) var(--space-md);
+    margin-top: var(--space-xl);
 
-    padding: 4rem 1.5rem 2rem;
-    margin-top: 5rem;
-    overflow: hidden;
-}
-
-/* طبقة تعتيم خفيفة لزيادة الجمالية */
-footer::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    z-index: 1;
+    /* حركة الدخول */
+    opacity: 0;
+    transform: translateY(40px);
+    animation: footerFadeUp 0.9s ease forwards;
 }
 
 .footer-content {
-    position: relative;
-    z-index: 2;
     max-width: 1100px;
     margin: auto;
     text-align: center;
-    color: #fff;
+    color: var(--color-white-pure);
 }
 
-/* اسم المنصة */
+/* العنوان */
 .footer-content h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    letter-spacing: 1px;
+    font-size: var(--fs-h2);
+    margin-bottom: var(--space-xs);
 }
 
 /* الشعار النصي */
 .footer-content p {
     opacity: 0.85;
-    margin-bottom: 1.8rem;
+    margin-bottom: var(--space-lg);
 }
 
-/* ===============================
-   SOCIAL ICONS
-================================ */
+/* مجموعة الأيقونات */
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
 }
 
-/* زر الأيقونة */
-.social-icons a {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(255, 255, 255, 0.08);
-    color: #fff;
-    font-size: 1.2rem;
-
-    transition: all 0.3s ease;
-}
-
-/* التأثير الذهبي المتوهج */
-.social-icons a:hover {
-    color: #d4af37; /* ذهبي */
-    background: rgba(212, 175, 55, 0.15);
-    box-shadow:
-        0 0 8px rgba(212, 175, 55, 0.6),
-        0 0 16px rgba(212, 175, 55, 0.4);
-    transform: translateY(-4px);
-}
-
-/* ===============================
-   FOOTER LINKS
-================================ */
+/* روابط الصفحات */
 .footer-links {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-md);
 }
 
 .footer-links a {
-    color: #fff;
-    opacity: 0.8;
-    margin: 0 0.4rem;
-    font-size: 0.95rem;
-    transition: opacity 0.3s ease;
+    color: var(--color-white-pure);
+    opacity: 0.75;
+    margin: 0 var(--space-xxs);
+    font-size: var(--fs-small);
 }
 
 .footer-links a:hover {
     opacity: 1;
-    text-decoration: underline;
-}
-
-/* حقوق النشر */
-footer p:last-child {
-    font-size: 0.85rem;
-    opacity: 0.6;
-    margin-top: 1rem;
 }
