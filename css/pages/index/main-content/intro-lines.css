@@ -1,0 +1,27 @@
+/* ===============================
+   INTRO LINES
+================================ */
+.intro-lines {
+    position: absolute;
+    inset: 0;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    pointer-events: none; /* لا تتفاعل */
+}
+
+/* جميع الأسطر */
+.intro-lines p {
+    font-size: 0.95rem;
+    opacity: 0.75;
+    max-width: 60%;
+}
+
+/* السطر التاسع فقط */
+.intro-lines p:nth-child(9) {
+    margin-top: auto;      /* يدفعه للأسفل */
+    align-self: center;    /* في الوسط أفقيًا */
+    text-align: center;
+    opacity: 0.9;
+}
