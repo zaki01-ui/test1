@@ -1,0 +1,14 @@
+/* ===============================
+   DYNAMIC CONTENT
+================================ */
+.dynamic-content {
+    width: 100%;
+}
+
+/* شبكة المنتجات */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    align-items: start; /* يمنع الفراغات العمودية */
+}
