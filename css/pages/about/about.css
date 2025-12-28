@@ -24,6 +24,7 @@
 
 .welcome-banner {
     position: relative;
+    margin-top: 80px;
     padding: var(--space-xl);
     border-radius: var(--radius-lg);
     overflow: hidden;
