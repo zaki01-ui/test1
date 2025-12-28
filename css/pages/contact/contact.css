@@ -1,0 +1,147 @@
+/* =========================================================
+   CONTACT PAGE – Page Layout Only
+   File: css/pages/contact/contact.css
+   Depends on:
+   - core/theme.css
+   - core/components.css
+========================================================= */
+
+@import url("../../core/theme.css");
+@import url("../../core/components.css");
+
+/* =========================================================
+   PAGE WRAPPER
+========================================================= */
+
+.narrow-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* =========================================================
+   CONTACT CARD
+========================================================= */
+
+.welcome-banner {
+    position: relative;
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+
+    /* نفس خلفية الهوية */
+    background: url("../../../assets/footer-bg.svg") center / cover no-repeat;
+
+    /* حركة دخول */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: contactFadeUp 0.9s ease forwards;
+}
+
+/* طبقة تعتيم */
+.welcome-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-fog-dark);
+    z-index: 1;
+}
+
+/* محتوى البطاقة */
+.welcome-banner > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.welcome-banner h1 {
+    font-size: var(--fs-h1);
+    margin-bottom: var(--space-sm);
+    text-align: center;
+    color: var(--color-white-pure);
+}
+
+/* الوصف */
+.welcome-banner > p {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    color: var(--color-white-pure);
+    opacity: 0.85;
+    font-size: var(--fs-body);
+}
+
+/* =========================================================
+   CONTACT INFO LIST
+========================================================= */
+
+.contact-info {
+    display: grid;
+    gap: var(--space-sm);
+    max-width: 520px;
+    margin: auto;
+}
+
+/* كل سطر تواصل */
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+
+    background: rgba(255,255,255,0.08);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+
+    color: var(--color-white-pure);
+    font-size: var(--fs-body);
+
+    transition: var(--transition-fast);
+}
+
+/* تأثير hover */
+.contact-info p:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+}
+
+/* الروابط */
+.contact-info a {
+    color: var(--color-gold-glow);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   RESPONSIVE – MOBILE FIRST
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .welcome-banner {
+        padding: var(--space-lg);
+    }
+
+    .welcome-banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .contact-info p {
+        font-size: 0.95rem;
+    }
+}
+
+/* =========================================================
+   ENTRY ANIMATION
+========================================================= */
+
+@keyframes contactFadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
