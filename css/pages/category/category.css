@@ -1,0 +1,120 @@
+/* =========================================================
+   CATEGORY PAGE – Page Layout Only
+   File: css/pages/category/category.css
+   Depends on:
+   - core/theme.css
+   - core/components.css
+========================================================= */
+
+@import url("../../core/theme.css");
+@import url("../../core/components.css");
+
+/* =========================================================
+   PAGE WRAPPER
+========================================================= */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+/* =========================================================
+   CATEGORY HEADER CARD
+   (Mini Welcome Banner)
+========================================================= */
+
+.welcome-banner {
+    position: relative;
+    min-height: 160px;
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+
+    background: url("../../../assets/footer-bg.svg") center / cover no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    opacity: 0;
+    transform: translateY(24px);
+    animation: categoryFadeUp 0.8s ease forwards;
+}
+
+/* Fog overlay */
+.welcome-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-fog-dark);
+    z-index: 1;
+}
+
+/* Content layer */
+.welcome-banner > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================================
+   CATEGORY TITLE
+========================================================= */
+
+#welcome-banner h1,
+#category-title {
+    font-size: var(--fs-h1);
+    color: var(--color-white-pure);
+    margin-bottom: var(--space-xs);
+}
+
+/* =========================================================
+   CATEGORY DESCRIPTION
+========================================================= */
+
+.welcome-banner p {
+    font-size: var(--fs-body);
+    color: var(--color-white-pure);
+    opacity: 0.85;
+    max-width: 600px;
+}
+
+/* =========================================================
+   PRODUCTS GRID
+   (Same behavior as Home)
+========================================================= */
+
+.products-grid {
+    margin-top: var(--space-md);
+}
+
+/* =========================================================
+   RESPONSIVE – MOBILE FIRST
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .welcome-banner {
+        min-height: 130px;
+        padding: var(--space-md) var(--space-lg);
+    }
+
+    #category-title {
+        font-size: 1.7rem;
+    }
+
+    .welcome-banner p {
+        font-size: 0.95rem;
+    }
+}
+
+/* =========================================================
+   ENTRY ANIMATION
+========================================================= */
+
+@keyframes categoryFadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
