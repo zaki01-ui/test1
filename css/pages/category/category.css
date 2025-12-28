@@ -26,6 +26,7 @@
 
 .welcome-banner {
     position: relative;
+    margin-top: 80px;
     min-height: 160px;
     padding: var(--space-lg) var(--space-xl);
     border-radius: var(--radius-lg);
