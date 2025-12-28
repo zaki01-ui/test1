@@ -1,0 +1,115 @@
+/* =========================================================
+   ABOUT PAGE – Page Layout Only
+   File: css/pages/about/about.css
+   Depends on:
+   - core/theme.css
+   - core/components.css
+========================================================= */
+
+@import url("../../core/theme.css");
+@import url("../../core/components.css");
+
+/* =========================================================
+   PAGE WRAPPER
+========================================================= */
+
+.narrow-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* =========================================================
+   ABOUT CARD
+========================================================= */
+
+.welcome-banner {
+    position: relative;
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+
+    /* استعمال بطاقة النظام */
+    background: url("../../../assets/footer-bg.svg") center / cover no-repeat;
+
+    /* حركة دخول خفيفة */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: aboutFadeUp 0.8s ease forwards;
+}
+
+/* طبقة تعتيم لتحسين القراءة */
+.welcome-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-fog-dark);
+    z-index: 1;
+}
+
+/* محتوى البطاقة */
+.welcome-banner > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.welcome-banner h1 {
+    font-size: var(--fs-h1);
+    margin-bottom: var(--space-md);
+    text-align: center;
+    color: var(--color-white-pure);
+}
+
+/* =========================================================
+   ABOUT TEXT
+========================================================= */
+
+.about-text {
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    line-height: 1.9;
+    color: var(--color-white-pure);
+    opacity: 0.95;
+}
+
+/* إبراز العناوين داخل النص */
+.about-text strong {
+    display: inline-block;
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xs);
+    color: var(--color-gold-glow);
+}
+
+/* =========================================================
+   RESPONSIVE – MOBILE FIRST
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .welcome-banner {
+        padding: var(--space-lg);
+    }
+
+    .welcome-banner h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-text {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+}
+
+/* =========================================================
+   ENTRY ANIMATION
+========================================================= */
+
+@keyframes aboutFadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
